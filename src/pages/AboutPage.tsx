@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Linkedin, Twitter, Github, Instagram } from "lucide-react";
 import aidenPhoto from "@/assets/aiden-photo.jpg";
+import SEO from "@/components/SEO";
 
 const socials = [
   { name: "LinkedIn", href: "https://linkedin.com/in/aidenhovren", icon: Linkedin },
@@ -86,9 +87,117 @@ const timeline = [
   { year: "2023", title: "U.S. Navy Rescue Swimmer", description: "Discovered a passion for aviation operations and systems while serving. This became the foundation for everything that followed." },
 ];
 
+// ProfilePage structured data with detailed Person markup
+const profileStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "name": "About Aiden Hovren",
+  "description": "Learn about Aiden Hovren - former Navy Rescue Swimmer turned entrepreneur. Founder of Ironvael and Operations University.",
+  "url": "https://aidenhovren.com/about",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Aiden Hovren",
+    "givenName": "Aiden",
+    "familyName": "Hovren",
+    "url": "https://aidenhovren.com",
+    "image": "https://aidenhovren.com/og-image.jpg",
+    "jobTitle": "Entrepreneur & Operations Expert",
+    "description": "Former U.S. Navy Rescue Swimmer turned entrepreneur. Lean Six Sigma Green Belt certified founder building ventures focused on operational excellence and systems thinking.",
+    "knowsAbout": [
+      "Operations Management",
+      "Lean Six Sigma",
+      "Entrepreneurship",
+      "Systems Thinking",
+      "Process Optimization",
+      "Business Strategy",
+      "Product Strategy",
+      "Aviation Operations",
+      "Crisis Response",
+      "Team Leadership"
+    ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "certification",
+        "name": "Lean Six Sigma Green Belt"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "military",
+        "name": "U.S. Navy Rescue Swimmer"
+      }
+    ],
+    "alumniOf": {
+      "@type": "Organization",
+      "name": "United States Navy"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Ironvael",
+      "url": "https://ironvael.com"
+    },
+    "founder": [
+      {
+        "@type": "Organization",
+        "name": "Ironvael",
+        "url": "https://ironvael.com",
+        "description": "Systems-driven holding company that builds, operates, and invests in resilient businesses."
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "Operations University",
+        "description": "Modern education platform focused on operations excellence, systems thinking, and real-world execution."
+      }
+    ],
+    "sameAs": [
+      "https://linkedin.com/in/aidenhovren",
+      "https://x.com/theaidenhovren",
+      "https://github.com/ironvael",
+      "https://instagram.com/aidenhovren"
+    ],
+    "hasOccupation": [
+      {
+        "@type": "Occupation",
+        "name": "Entrepreneur",
+        "occupationalCategory": "Business Owner"
+      },
+      {
+        "@type": "Occupation",
+        "name": "Operations Expert",
+        "occupationalCategory": "Operations Management"
+      }
+    ]
+  }
+};
+
+const breadcrumbData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://aidenhovren.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About",
+      "item": "https://aidenhovren.com/about"
+    }
+  ]
+};
+
 const AboutPage = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="About - Former Navy Rescue Swimmer & Entrepreneur"
+        description="Learn about Aiden Hovren - former U.S. Navy Rescue Swimmer turned entrepreneur. Lean Six Sigma certified founder of Ironvael and Operations University, building ventures focused on operational excellence."
+        url="/about"
+        structuredData={[profileStructuredData, breadcrumbData]}
+      />
       <Navigation />
       <main className="pt-24">
         {/* Hero Section with Photo */}
