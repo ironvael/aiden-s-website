@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import { projects, Project } from "@/data/projects";
+import SEO from "@/components/SEO";
 
 const ProjectCard = ({ project }: { project: Project }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -73,9 +74,58 @@ const ProjectCard = ({ project }: { project: Project }) => {
   );
 };
 
+// Structured data for projects collection
+const collectionStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Projects by Aiden Hovren",
+  "description": "A curated collection of ventures, products, and experiments by Aiden Hovren - entrepreneur and operations expert.",
+  "url": "https://aidenhovren.com/projects",
+  "author": {
+    "@type": "Person",
+    "name": "Aiden Hovren",
+    "url": "https://aidenhovren.com"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": projects.length,
+    "itemListElement": projects.map((project, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "url": `https://aidenhovren.com/projects/${project.slug}`,
+      "name": project.title
+    }))
+  }
+};
+
+const breadcrumbData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://aidenhovren.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Projects",
+      "item": "https://aidenhovren.com/projects"
+    }
+  ]
+};
+
 const ProjectsPage = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Projects - Entrepreneurial Ventures & Products"
+        description="Explore Aiden Hovren's portfolio of entrepreneurial ventures, products, and experiments. From Ironvael to Operations University - building businesses focused on operational excellence."
+        url="/projects"
+        structuredData={[collectionStructuredData, breadcrumbData]}
+      />
       <Navigation />
 
       <main className="pt-32 pb-24 px-6 md:px-12 lg:px-24">
