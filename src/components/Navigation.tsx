@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navLinks = [
   { label: "About", href: "/#about" },
@@ -30,36 +31,42 @@ const Navigation = () => {
           Aiden Hovren
         </Link>
 
-        <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <li key={link.label}>
-              {link.href.startsWith("/projects") || link.href.startsWith("/thoughts") ? (
-                <Link 
-                  to={link.href}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ) : (
-                <a 
-                  href={link.href} 
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  onClick={() => handleNavClick(link.href)}
-                >
-                  {link.label}
-                </a>
-              )}
-            </li>
-          ))}
-        </ul>
+        <div className="hidden md:flex items-center gap-8">
+          <ul className="flex items-center gap-8">
+            {navLinks.map((link) => (
+              <li key={link.label}>
+                {link.href.startsWith("/projects") || link.href.startsWith("/thoughts") ? (
+                  <Link 
+                    to={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a 
+                    href={link.href} 
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    onClick={() => handleNavClick(link.href)}
+                  >
+                    {link.label}
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
+          <ThemeToggle />
+        </div>
 
-        <button 
-          className="md:hidden p-2 -mr-2"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
+          <button 
+            className="p-2 -mr-2"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </nav>
 
       {isOpen && (
