@@ -136,7 +136,7 @@ const profileStructuredData = {
       "name": "Ironvael",
       "url": "https://ironvael.com"
     },
-    "founder": [
+    "affiliation": [
       {
         "@type": "Organization",
         "name": "Ironvael",
