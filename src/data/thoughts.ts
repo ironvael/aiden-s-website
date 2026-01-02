@@ -77,7 +77,7 @@ Here’s the simplest, most practical software stack I recommend if your goal is
 
 Every business needs a domain. This is your identity layer.
 
-Buy one for about $10–$15 per year from **Namecheap**. It’s inexpensive, reliable, and gets out of your way.
+Buy one for about $10–$15 per year from [Namecheap](https://www.namecheap.com). It’s inexpensive, reliable, and gets out of your way.
 
 Your domain becomes the foundation for email, your website, and your credibility.
 
@@ -85,7 +85,7 @@ Your domain becomes the foundation for email, your website, and your credibility
 
 Before building anything else, set up email.
 
-Use **Zoho Workspaces** for roughly $4 per user per month. You get professional email on your custom domain without paying enterprise prices.
+Use [Zoho Workspaces](https://www.zoho.com/workplace/) for roughly $4 per user per month. You get professional email on your custom domain without paying enterprise prices.
 
 This single step makes your business feel real.
 
@@ -93,7 +93,7 @@ This single step makes your business feel real.
 
 Separate business and personal finances immediately.
 
-**Mercury** is ideal for bootstrapped founders:
+[Mercury](https://mercury.com) is ideal for bootstrapped founders:
 - No monthly fees
 - Clean, modern interface
 - Virtual and physical cards
@@ -105,7 +105,7 @@ This becomes the financial backbone of your operation.
 
 You do not need a $50 AWS server to launch a website.
 
-Use **Vercel**. It’s free to start, globally fast, and removes the entire burden of server management.
+Use [Vercel](https://vercel.com). It’s free to start, globally fast, and removes the entire burden of server management.
 
 You get automatic deployments, SSL by default, and scaling without thinking about it.
 
@@ -113,7 +113,7 @@ This is exactly what early-stage businesses need.
 
 ## Step 5: Authentication and Database (Without Overengineering)
 
-For user authentication and a simple database, use **Firebase**.
+For user authentication and a simple database, use [Firebase](https://firebase.google.com).
 
 Firebase handles:
 - User authentication
@@ -127,7 +127,7 @@ The Vercel + Firebase combo is more than enough for most early products.
 
 ## Step 6: Email Newsletters (Free and Clean)
 
-For newsletters and transactional emails, use **Resend**.
+For newsletters and transactional emails, use [Resend](https://resend.com).
 
 It’s developer-friendly, generous on the free tier, and avoids the bloat of traditional email marketing platforms. Perfect for early audiences, product updates, and simple newsletters.
 
@@ -137,7 +137,7 @@ You don’t need complex automations on day one. You need deliverability.
 
 Early on, a CRM doesn’t need to be fancy — it needs to exist.
 
-Use **Hubspot**’s free tier if you want structured pipelines and contact tracking. Or use Excel or Google Sheets if your volume is low.
+Use [HubSpot](https://www.hubspot.com/products/crm)’s free tier if you want structured pipelines and contact tracking. Or use Excel or Google Sheets if your volume is low.
 
 Both are valid. Both are free.
 
@@ -147,13 +147,13 @@ The important thing is tracking relationships, not the tool itself.
 
 You need to get paid and understand where your money is going.
 
-Use **Wave** for invoicing and basic accounting. It’s free, straightforward, and more than enough until revenue and complexity increase.
+Use [Wave](https://www.waveapps.com) for invoicing and basic accounting. It’s free, straightforward, and more than enough until revenue and complexity increase.
 
 Clarity beats sophistication at this stage.
 
 ## Step 9: Internal Management and Planning
 
-Use **Notion** as your internal operating system.
+Use [Notion](https://www.notion.so) as your internal operating system.
 
 One place for:
 - Notes
