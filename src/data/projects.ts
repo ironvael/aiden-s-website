@@ -50,7 +50,7 @@ export const projects: Project[] = [
     longDescription:
       "Self Rescue Co. is an apparel brand inspired by preparedness, resilience, and personal responsibility. Our designs draw from rescue culture, hard lessons, and real-world experience—made for people who value capability over comfort. Self Rescue isn’t about fear; it’s about readiness and owning the outcome.",
     category: "E-commerce",
-    year: "2024",
+    year: "2025",
     image: "/856937-O-DRG18-359.jpg",
     gallery: [
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80",
@@ -75,7 +75,7 @@ export const projects: Project[] = [
     longDescription:
       "Kaploosh Energy is a culture-first energy brand blending clean energy, bold flavors, and high-impact visuals. Built for creators, gamers, and late-night builders, it’s designed to fuel focus and momentum without the corporate feel. Kaploosh turns energy into identity, not just stimulation.",
     category: "Consumer Goods",
-    year: "2023",
+    year: "2025",
     image: "/kaploosh-energy.png",
     gallery: [
       "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80",
@@ -92,28 +92,27 @@ export const projects: Project[] = [
   },
   {
     id: "4",
-    slug: "carbon-zero",
-    title: "Carbon Zero",
-    description: "Enterprise sustainability platform helping companies track and reduce their carbon footprint.",
+    slug: "use-origin",
+    title: "Use Origin",
+    description: "Use Origin is a simple, affordable link-in-bio tool for creators who want something that just works.",
     longDescription:
-      "Carbon Zero empowers businesses to measure, analyze, and reduce their environmental impact. From supply chain emissions to office energy use, we make sustainability actionable and measurable.",
-    category: "CleanTech",
-    year: "2023",
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&q=80",
+      "Use Origin is a modern link-in-bio tool designed around simplicity and ownership. We remove bloat, lower the barrier to entry, and focus on speed, customization, and reliability. At a fair, accessible price, Use Origin lets users publish once and move on to what actually matters—building their work and audience.",
+    category: "SaaS",
+    year: "2025",
+    image: "/use-origin-logo.png",
     gallery: [
       "https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=800&q=80",
       "https://images.unsplash.com/photo-1569163139599-0f4517e36f31?w=800&q=80",
     ],
     featured: false,
     challenge:
-      "Companies want to reduce emissions but lack visibility into their carbon footprint. Existing solutions are expensive, complex, and designed for sustainability experts.",
+      "Link-in-bio tools are bloated, overpriced, and packed with features most people never use. Creators and small brands are forced to overpay for complexity when they just need something fast, reliable, and clean.",
     solution:
-      "Created an intuitive dashboard that automatically tracks emissions across operations. Integrated with accounting software, energy providers, and logistics platforms for real-time data.",
+      "Use Origin strips link-in-bio software down to what actually matters: speed, customization, and ownership. We offer a simple, modern platform at a price that removes friction instead of creating it.",
     result:
-      "Helped 200+ companies reduce emissions by an average of 23%. Processing $2B+ in supply chain data monthly. Certified B-Corp partner.",
+      "A lightweight link-in-bio tool that anyone can use without thinking about it. Less setup, less cost, and a page that just works—so users can focus on building, not configuring.",
   },
   {
-    /*
     id: "5",
     slug: "artisan-collective",
     title: "Artisan Collective",
@@ -135,7 +134,6 @@ export const projects: Project[] = [
       "Built a marketplace with storytelling at its core. Each product page features the artisan's story, production process, and impact metrics. Implemented fair-trade pricing models.",
     result:
       "8,000+ artisans from 45 countries. $15M in sales with 70% going directly to creators. Average order value 3x higher than comparable platforms.",
-  */
   },
 ];
 
