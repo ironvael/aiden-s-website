@@ -11,41 +11,57 @@ export interface Thought {
 }
 
 export const thoughts: Thought[] = [
-  {
-    id: "1",
-    slug: "why-i-build-in-public",
-    title: "Why I Build in Public",
-    excerpt: "The unexpected benefits of sharing your work before it's ready.",
-    content: `Building in public changed everything for me. It wasn't a strategic decision—it was born out of necessity. I was working on projects alone, with no feedback loop, no accountability, and honestly, no motivation.
+{
+  id: "1",
+  slug: "why-i-started-ironvael",
+  title: "Why I Started Ironvael",
+  excerpt: "Ironvael wasn’t built to chase hype or scale fast. It was built to create durable systems that survive contact with reality.",
+  content: `Ironvael didn’t start as a company idea. It started as a response to a pattern I kept seeing across different environments: capable people trapped inside fragile systems.
 
-The first time I shared a work-in-progress publicly, I felt exposed. Vulnerable. What if people thought it was amateur? What if they pointed out obvious flaws I'd missed?
+I watched organizations that looked impressive on the surface fall apart under even modest pressure. Not because the people were bad, but because the systems they relied on were brittle, opaque, and allergic to feedback. Titles multiplied. Processes calcified. Responsibility blurred.
 
-They did point out flaws. And that was the gift.
+At some point, it became clear that my frustration wasn’t with individuals. It was with systems that made failure inevitable and then blamed the humans caught inside them.
 
-## The Feedback Loop
+## The Problem With Fragile Systems
 
-When you build in private, you're operating in a vacuum. Your assumptions go unchallenged. Your blind spots remain invisible. You can spend months perfecting something nobody wants.
+Most organizations work only under ideal conditions. They rely on heroics, institutional memory, or unspoken rules to function. The moment stress appears—growth, turnover, uncertainty—they begin to crack.
 
-Building in public creates an immediate feedback loop. Not just criticism—but genuine insight from people who see your work with fresh eyes.
+Fragile systems reward appearances over outcomes. They confuse motion with progress and complexity with competence. Over time, they become impossible to reason about, let alone improve.
 
-## The Accountability Effect
+Ironvael exists as a rejection of that model.
 
-Sharing your progress publicly creates a subtle but powerful form of accountability. When you've told people you're working on something, there's a gentle pressure to follow through. Not external pressure from others, but internal pressure from yourself.
+## Why Build a Holding Structure
 
-## The Network Effect
+Ironvael is not a startup studio, a brand agency, or a growth experiment. It’s a holding structure designed to support projects that prioritize clarity, durability, and leverage.
 
-Perhaps the most unexpected benefit: the people you meet along the way. Building in public attracts others who are on similar journeys. It creates organic connections that would never happen if you stayed in your cave until launch.
+Each project under Ironvael is treated as a system first and a product second. If it can’t be explained simply, maintained sanely, or operated without constant intervention, it doesn’t belong here.
 
-## Start Before You're Ready
+The goal isn’t speed. It’s survivability.
 
-You don't need a polished product to start sharing. You need willingness to be seen mid-process. That vulnerability is what creates genuine connection with your audience.
+## What the Name Means
 
-The work improves when you share it. And so do you.`,
-    date: "Dec 2025",
-    readTime: "5 min read",
-    category: "Process",
-    featured: true,
-  },
+Ironvael sits at the boundary between reality and abstraction.
+
+Iron represents constraint, weight, and the real-world forces every system eventually encounters. The veil represents interfaces, models, and the abstractions we use to make complexity manageable.
+
+Most failures happen when abstraction drifts too far from reality. Ironvael is an attempt to keep those layers aligned.
+
+## What I’m Optimizing For
+
+Ironvael isn’t optimized for virality, valuation, or rapid expansion. It’s optimized for systems that don’t collapse when attention moves elsewhere.
+
+Durability matters more than momentum.
+Clarity matters more than cleverness.
+Design matters more than decoration.
+
+If Ironvael succeeds, it won’t be because it moved fast. It will be because it didn’t break.
+
+Ironvael is still small. That’s intentional. Systems should earn their complexity.`,
+  date: "Dec 2025",
+  readTime: "5 min read",
+  category: "Philosophy",
+  featured: true,
+},
   {
     id: "2",
     slug: "the-art-of-starting-over",
