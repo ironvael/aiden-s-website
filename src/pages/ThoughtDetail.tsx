@@ -3,6 +3,17 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { getThoughtBySlug, getAdjacentThoughts } from "@/data/thoughts";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
+
+// Helper to convert "Dec 2025" to ISO date
+const parseDate = (dateStr: string): string => {
+  const months: Record<string, string> = {
+    Jan: "01", Feb: "02", Mar: "03", Apr: "04", May: "05", Jun: "06",
+    Jul: "07", Aug: "08", Sep: "09", Oct: "10", Nov: "11", Dec: "12"
+  };
+  const [month, year] = dateStr.split(" ");
+  return `${year}-${months[month] || "01"}-01`;
+};
 
 const ThoughtDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -12,6 +23,63 @@ const ThoughtDetail = () => {
   if (!thought) {
     return <Navigate to="/thoughts" replace />;
   }
+
+  const isoDate = parseDate(thought.date);
+
+  // Article structured data
+  const articleStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": thought.title,
+    "description": thought.excerpt,
+    "url": `https://aidenhovren.com/thoughts/${thought.slug}`,
+    "datePublished": isoDate,
+    "dateModified": isoDate,
+    "author": {
+      "@type": "Person",
+      "name": "Aiden Hovren",
+      "url": "https://aidenhovren.com"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Aiden Hovren",
+      "url": "https://aidenhovren.com"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://aidenhovren.com/thoughts/${thought.slug}`
+    },
+    "keywords": [thought.category, "entrepreneurship", "operations", "business", "Aiden Hovren"],
+    "articleSection": thought.category,
+    "wordCount": thought.content.split(/\s+/).length,
+    "inLanguage": "en-US"
+  };
+
+  // Breadcrumb structured data
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://aidenhovren.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Thoughts",
+        "item": "https://aidenhovren.com/thoughts"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": thought.title,
+        "item": `https://aidenhovren.com/thoughts/${thought.slug}`
+      }
+    ]
+  };
 
   // Convert markdown-style content to HTML
   const formatContent = (content: string) => {
@@ -43,6 +111,18 @@ const ThoughtDetail = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title={thought.title}
+        description={thought.excerpt}
+        url={`/thoughts/${thought.slug}`}
+        type="article"
+        article={{
+          publishedTime: isoDate,
+          author: "Aiden Hovren",
+          tags: [thought.category, "entrepreneurship", "operations", "business"]
+        }}
+        structuredData={[articleStructuredData, breadcrumbData]}
+      />
       <Navigation />
 
       <main className="pt-32 pb-24">
