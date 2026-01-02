@@ -4,18 +4,19 @@ import { ArrowUpRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import { projects, Project } from "@/data/projects";
 
-const ProjectCard = ({ project }: { project: Project }) => {
+const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <Link
       to={`/projects/${project.slug}`}
-      className={`group relative block ${project.featured ? "md:col-span-2 md:row-span-2" : ""}`}
+      className={`group relative block opacity-0 animate-fade-in ${project.featured ? "md:col-span-2 md:row-span-2" : ""}`}
+      style={{ animationDelay: `${0.4 + index * 0.1}s`, animationFillMode: 'forwards' }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div
-        className={`relative overflow-hidden bg-secondary ${
+        className={`relative overflow-hidden bg-secondary rounded-sm ${
           project.featured ? "aspect-[4/3] md:aspect-[16/10]" : "aspect-[4/3]"
         }`}
       >
@@ -23,47 +24,58 @@ const ProjectCard = ({ project }: { project: Project }) => {
         <img
           src={project.image}
           alt={project.title}
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          className="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-1"
         />
 
-        {/* Overlay */}
-        <div
-          className={`absolute inset-0 bg-foreground/0 transition-all duration-500 ${
-            isHovered ? "bg-foreground/60" : ""
-          }`}
-        />
+        {/* Gradient overlay - always visible */}
+        <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+        {/* Border glow effect */}
+        <div className="absolute inset-0 rounded-sm ring-1 ring-inset ring-foreground/0 group-hover:ring-foreground/10 transition-all duration-500" />
 
         {/* Content overlay */}
         <div
-          className={`absolute inset-0 p-6 md:p-8 flex flex-col justify-end transition-opacity duration-500 ${
-            isHovered ? "opacity-100" : "opacity-0"
+          className={`absolute inset-0 p-6 md:p-8 flex flex-col justify-end transition-all duration-500 ${
+            isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          <p className="text-background/70 text-sm mb-2">
-            {project.category} · {project.year}
-          </p>
+          <div className="flex items-center gap-2 mb-3">
+            <span className="px-2 py-1 bg-background/20 backdrop-blur-sm rounded text-background/90 text-xs font-medium uppercase tracking-wider">
+              {project.category}
+            </span>
+            <span className="text-background/60 text-xs">{project.year}</span>
+          </div>
           <h3
-            className={`font-display font-medium text-background mb-2 ${
+            className={`font-display font-medium text-background mb-2 transition-transform duration-500 ${
               project.featured ? "text-2xl md:text-4xl" : "text-xl md:text-2xl"
-            }`}
+            } ${isHovered ? "translate-x-0" : "-translate-x-2"}`}
           >
             {project.title}
           </h3>
-          <p className="text-background/80 text-sm md:text-base max-w-md">{project.description}</p>
+          <p className={`text-background/80 text-sm md:text-base max-w-md transition-all duration-500 delay-75 ${
+            isHovered ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2"
+          }`}>
+            {project.description}
+          </p>
         </div>
 
-        {/* Arrow */}
+        {/* Arrow button */}
         <div
-          className={`absolute top-6 right-6 w-10 h-10 rounded-full bg-background flex items-center justify-center transition-all duration-500 ${
-            isHovered ? "opacity-100 translate-x-0 translate-y-0" : "opacity-0 translate-x-2 -translate-y-2"
+          className={`absolute top-6 right-6 w-10 h-10 rounded-full bg-background flex items-center justify-center transition-all duration-500 shadow-lg ${
+            isHovered ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-75 rotate-45"
           }`}
         >
           <ArrowUpRight className="w-5 h-5 text-foreground" />
         </div>
+
+        {/* Corner accent */}
+        <div className={`absolute bottom-0 left-0 w-1 h-0 bg-primary transition-all duration-500 ${
+          isHovered ? "h-16" : "h-0"
+        }`} />
       </div>
 
       {/* Bottom info - visible when not hovered */}
-      <div className={`mt-4 transition-opacity duration-300 ${isHovered ? "opacity-0" : "opacity-100"}`}>
+      <div className={`mt-4 transition-all duration-300 ${isHovered ? "opacity-0 -translate-y-2" : "opacity-100 translate-y-0"}`}>
         <div className="flex items-center justify-between">
           <h3 className="font-display font-medium text-lg">{project.title}</h3>
           <span className="text-sm text-muted-foreground">{project.year}</span>
@@ -103,12 +115,9 @@ const ProjectsPage = () => {
           </div>
 
           {/* Projects Grid */}
-          <div
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 opacity-0 animate-fade-in"
-            style={{ animationDelay: "0.4s" }}
-          >
-            {projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {projects.map((project, index) => (
+              <ProjectCard key={project.id} project={project} index={index} />
             ))}
           </div>
 
