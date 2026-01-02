@@ -121,7 +121,7 @@ export const projects: Project[] = [
       "Operations University teaches the practical skills behind how organizations actually run. We focus on operations, process improvement, and systems thinking grounded in real-world application, not theory for theory’s sake.",
     category: "EdTech",
     year: "2025",
-    image: "/ou-logo.png",
+    image: "/OU-logo.png",
     gallery: [
       "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&q=80",
       "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
