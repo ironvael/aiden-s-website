@@ -92,14 +92,14 @@ export const projects: Project[] = [
   },
   {
     id: "4",
-    slug: "carbon-zero",
-    title: "Carbon Zero",
+    slug: "use-origin",
+    title: "Use Origin",
     description: "Enterprise sustainability platform helping companies track and reduce their carbon footprint.",
     longDescription:
       "Carbon Zero empowers businesses to measure, analyze, and reduce their environmental impact. From supply chain emissions to office energy use, we make sustainability actionable and measurable.",
     category: "CleanTech",
     year: "2023",
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&q=80",
+    image: "/use-origin-logo.png",
     gallery: [
       "https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=800&q=80",
       "https://images.unsplash.com/photo-1569163139599-0f4517e36f31?w=800&q=80",
@@ -114,14 +114,14 @@ export const projects: Project[] = [
   },
   {
     id: "5",
-    slug: "use-origin",
-    title: "Use Origin",
+    slug: "artisan-collective",
+    title: "Artisan Collective",
     description: "E-commerce marketplace connecting independent craftspeople with conscious consumers globally.",
     longDescription:
       "Artisan Collective is a curated marketplace celebrating handmade goods and the stories behind them. We partner directly with artisans, ensuring fair wages and sustainable practices.",
     category: "E-commerce",
     year: "2022",
-    image: "/use-origin-logo.png",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80",
     gallery: [
       "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&q=80",
       "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
