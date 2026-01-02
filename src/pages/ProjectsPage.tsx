@@ -107,9 +107,9 @@ const ProjectsPage = () => {
             className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 opacity-0 animate-fade-in"
             style={{ animationDelay: "0.4s" }}
           >
-            {/*{projects.map((project) => (
+            {projects.map((project) => (
               <ProjectCard key={project.id} project={project} />
-            ))} */}
+            ))}
           </div>
 
           {/* Bottom CTA */}
