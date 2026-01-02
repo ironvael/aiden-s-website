@@ -36,6 +36,9 @@ const Footer = () => {
             <a href="https://github.com/ironvael" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               GitHub
             </a>
+            <a href="https://instagram.com/aidenhovren" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Instagram
+            </a>
           </nav>
         </div>
       </div>
