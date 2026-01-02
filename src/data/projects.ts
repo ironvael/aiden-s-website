@@ -1,4 +1,4 @@
-export interface Project {
+texport interface Project {
   id: string;
   slug: string;
   title: string;
@@ -114,14 +114,14 @@ export const projects: Project[] = [
   },
   {
     id: "5",
-    slug: "artisan-collective",
-    title: "Artisan Collective",
-    description: "E-commerce marketplace connecting independent craftspeople with conscious consumers globally.",
+    slug: "operations-university",
+    title: "Operations University",
+    description: "Operations University is a modern education platform focused on operations excellence, systems thinking, and real-world execution.",
     longDescription:
-      "Artisan Collective is a curated marketplace celebrating handmade goods and the stories behind them. We partner directly with artisans, ensuring fair wages and sustainable practices.",
-    category: "E-commerce",
-    year: "2022",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80",
+      "Operations University teaches the practical skills behind how organizations actually run. We focus on operations, process improvement, and systems thinking grounded in real-world application, not theory for theory’s sake.",
+    category: "EdTech",
+    year: "2025",
+    image: "/ou-logo.png",
     gallery: [
       "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&q=80",
       "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
@@ -129,11 +129,11 @@ export const projects: Project[] = [
     featured: false,
     link: "https://artisancollective.shop",
     challenge:
-      "Independent artisans struggle to reach global audiences while maintaining fair pricing. Mass-market platforms prioritize volume over craftsmanship.",
+      "Traditional business education is expensive, slow to adapt, and often disconnected from how organizations actually operate. Many professionals leave with theory, but without practical systems they can apply immediately.",
     solution:
-      "Built a marketplace with storytelling at its core. Each product page features the artisan's story, production process, and impact metrics. Implemented fair-trade pricing models.",
+      "Operations University delivers hands-on, operations-focused education built around real-world execution. We teach process improvement, systems thinking, and operational discipline in a format designed for working professionals.",
     result:
-      "8,000+ artisans from 45 countries. $15M in sales with 70% going directly to creators. Average order value 3x higher than comparable platforms.",
+      "Graduates who can step into organizations and make things work better—faster, cleaner, and with measurable impact. Practical credentials that translate directly into improved performance and leadership capability.",
   },
 ];
 
