@@ -43,12 +43,13 @@ export const projects: Project[] = [
   },
   {
     id: "2",
-    slug: "nomad-workspace",
-    title: "Nomad Workspace",
-    description: "The definitive platform for remote workers to discover and book creative workspaces worldwide.",
+    slug: "self-rescue-co",
+    title: "Self Rescue Co.",
+    description:
+      "Self Rescue Co. is an apparel brand built around self-reliance, preparedness, and calm under pressure. The designs reflect a mindset: take responsibility and be ready.",
     longDescription:
-      "Nomad Workspace connects digital nomads and remote professionals with curated coworking spaces, cafés, and private offices across 80+ countries. More than just a booking platform — it's a community.",
-    category: "SaaS Platform",
+      "Self Rescue Co. is an apparel brand inspired by preparedness, resilience, and personal responsibility. Our designs draw from rescue culture, hard lessons, and real-world experience—made for people who value capability over comfort. Self Rescue isn’t about fear; it’s about readiness and owning the outcome.",
+    category: "E-commerce",
     year: "2024",
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
     gallery: [
@@ -57,22 +58,23 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1497215842964-222b430dc094?w=800&q=80",
     ],
     featured: true,
-    link: "https://nomadworkspace.co",
+    link: "https://selfrescue.shop",
     challenge:
-      "Remote workers waste hours researching workspaces in unfamiliar cities. Reviews are scattered, availability is unclear, and there's no way to verify WiFi quality or amenities.",
+      "Preparedness and self-reliance are often reduced to fear-based marketing or performative “tacticool” aesthetics. The message gets lost, and the mindset gets diluted.",
     solution:
-      "Built a comprehensive platform with verified reviews, real-time availability, WiFi speed tests, and a community rating system. Integrated with calendar apps for seamless booking.",
+      "Self Rescue Co. uses apparel as a signal, not a costume. Each piece is designed to reflect calm under pressure, personal responsibility, and the belief that your outcome is ultimately yours to own.",
     result:
-      "12,000+ verified workspaces across 80 countries. 45,000 monthly active users. Featured in Fast Company and TechCrunch as a 'must-have tool for remote work.'",
+      "Clothing that represents a way of thinking, not a trend. A brand worn by people who value readiness, resilience, and quiet competence—on ordinary days and difficult ones alike.",
   },
   {
     id: "3",
-    slug: "echo-health",
-    title: "Echo Health",
-    description: "AI-powered mental wellness companion providing personalized support and insights.",
+    slug: "kaploosh",
+    title: "Kaploosh",
+    description:
+      "Kaploosh Energy is a lifestyle-driven energy drink brand built around bold flavor, clean energy, and expressive design. It’s made for creators, night-owls, and people who move fast.",
     longDescription:
-      "Echo Health is a mental wellness platform that combines cognitive behavioral therapy techniques with AI to provide accessible, personalized mental health support. Designed in collaboration with clinical psychologists.",
-    category: "HealthTech",
+      "Kaploosh Energy is a culture-first energy brand blending clean energy, bold flavors, and high-impact visuals. Built for creators, gamers, and late-night builders, it’s designed to fuel focus and momentum without the corporate feel. Kaploosh turns energy into identity, not just stimulation.",
+    category: "Consumer Goods",
     year: "2023",
     image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1200&q=80",
     gallery: [
@@ -80,13 +82,13 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80",
     ],
     featured: false,
-    link: "https://echo.health",
+    link: "https://kaploosh.com",
     challenge:
-      "Mental health support is expensive and inaccessible for many. Traditional apps feel impersonal and lack the nuance needed for effective support.",
+      "The energy drink market is crowded with copy-paste formulas, artificial hype, and brands that burn bright and disappear. Most products focus on stimulation, not experience or identity.",
     solution:
-      "Developed an AI companion trained on CBT principles, offering 24/7 support through conversational interfaces. Added mood tracking, guided exercises, and crisis intervention pathways.",
+      "Kaploosh Energy is built as a lifestyle-first energy brand that blends flavor, performance, and culture. We prioritize clean energy, strong branding, and community-driven momentum over empty buzz.",
     result:
-      "500,000+ conversations facilitated. 78% of users reported improved mental wellbeing after 30 days. Partnered with 15 enterprises for employee wellness programs.",
+      "An energy drink that feels fun, expressive, and repeatable—fuel that people actually want to reach for. Kaploosh isn’t just consumed; it’s worn, shared, and built into a lifestyle.",
   },
   {
     id: "4",
