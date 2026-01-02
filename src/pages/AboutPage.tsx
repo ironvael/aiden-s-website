@@ -2,8 +2,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 const skills = [
-  { category: "Building", items: ["Product Strategy", "Systems Design", "Brand Development", "Content Creation"] },
-  { category: "Thinking", items: ["First Principles", "Pattern Recognition", "Long-term Planning", "Risk Assessment"] },
+  { category: "Operations", items: ["Process Optimization", "Systems Design", "Lean Six Sigma", "Aviation Operations"] },
+  { category: "Building", items: ["Product Strategy", "Curriculum Development", "Content Creation", "Business Development"] },
   { category: "Tools", items: ["Notion", "Figma", "Analytics", "AI Tools"] },
 ];
 
@@ -12,10 +12,10 @@ const interests = [
 ];
 
 const timeline = [
-  { year: "2025", title: "Founded Ironvael", description: "A holding structure for durable projects and systems." },
-  { year: "2024", title: "Building in Public", description: "Started documenting the journey of creating and launching ventures." },
-  { year: "2023", title: "First Ventures", description: "Explored product ideas and learned the fundamentals of building." },
-  { year: "2022", title: "The Spark", description: "Discovered the intersection of technology, design, and entrepreneurship." },
+  { year: "2025", title: "Founded Ironvael", description: "Created a holding structure to unify all ventures under one roof. All projects preparing to launch and scale." },
+  { year: "2025", title: "Started Operations University", description: "Began building an educational platform focused on operational excellence and systems thinking." },
+  { year: "2024", title: "Transitioned to Civilian Life", description: "Left the Navy. Worked as an MH-60S SME writing curriculum for new aircrewmen. Started pursuing Lean Six Sigma Green Belt." },
+  { year: "2023", title: "U.S. Navy Rescue Swimmer", description: "Discovered a passion for aviation operations and systems while serving. This became the foundation for everything that followed." },
 ];
 
 const AboutPage = () => {
@@ -35,22 +35,22 @@ const AboutPage = () => {
                     </svg>
                   </div>
                 </div>
-                <p className="text-xs text-muted-foreground mt-3 tracking-wide">Entrepreneur & Creator</p>
+                <p className="text-xs text-muted-foreground mt-3 tracking-wide">Former Navy Rescue Swimmer · Entrepreneur</p>
               </div>
               
               <div className="md:col-span-8 space-y-6">
                 <p className="text-sm text-muted-foreground tracking-wide uppercase">About</p>
                 <h1 className="text-3xl md:text-4xl font-serif leading-tight">
-                  I'm Aiden Hovren—an entrepreneur and creator driven by curiosity.
+                  I'm Aiden Hovren—a former U.S. Navy Rescue Swimmer turned entrepreneur.
                 </h1>
                 <p className="text-muted-foreground leading-relaxed">
-                  Whether launching a new venture or crafting content, I believe in building with intention. Every project is an opportunity to learn, experiment, and create something meaningful.
+                  My time in the military gave me more than discipline—it sparked a deep fascination with aviation operations and how systems work under pressure. After transitioning out, I realized that same operational mindset could be applied to building businesses.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  I'm drawn to the space where ideas meet execution—where the "what if" becomes "what is." I think in systems, design for durability, and optimize for clarity over cleverness.
+                  When I faced difficulties breaking into the civilian workforce, I decided to build my own path. I started learning everything I could about business, operations, and entrepreneurship. That journey led me to create Operations University and eventually Ironvael—a holding structure for ventures built on systems thinking and operational excellence.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  When I'm not building, you'll find me exploring new concepts, connecting with creators, and chasing the next interesting problem to solve.
+                  Today, all ventures under Ironvael are preparing to launch and scale. I'm focused on building durable systems that don't just survive contact with reality—they thrive in it.
                 </p>
               </div>
             </div>
