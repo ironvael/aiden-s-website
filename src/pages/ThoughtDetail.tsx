@@ -1,0 +1,132 @@
+import { useParams, Link, Navigate } from "react-router-dom";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { getThoughtBySlug, getAdjacentThoughts } from "@/data/thoughts";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+
+const ThoughtDetail = () => {
+  const { slug } = useParams<{ slug: string }>();
+  const thought = slug ? getThoughtBySlug(slug) : undefined;
+  const { prev, next } = slug ? getAdjacentThoughts(slug) : { prev: null, next: null };
+
+  if (!thought) {
+    return <Navigate to="/thoughts" replace />;
+  }
+
+  // Convert markdown-style content to HTML
+  const formatContent = (content: string) => {
+    return content
+      .split('\n\n')
+      .map((paragraph, index) => {
+        // Handle headers
+        if (paragraph.startsWith('## ')) {
+          return (
+            <h2 key={index} className="text-2xl md:text-3xl font-display font-medium mt-12 mb-6">
+              {paragraph.replace('## ', '')}
+            </h2>
+          );
+        }
+        // Handle bold text and regular paragraphs
+        const formattedText = paragraph.replace(
+          /\*\*(.*?)\*\*/g,
+          '<strong class="font-semibold text-foreground">$1</strong>'
+        );
+        return (
+          <p
+            key={index}
+            className="text-lg leading-relaxed text-muted-foreground mb-6"
+            dangerouslySetInnerHTML={{ __html: formattedText }}
+          />
+        );
+      });
+  };
+
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      <Navigation />
+
+      <main className="pt-32 pb-24">
+        {/* Header */}
+        <header className="px-6 md:px-12 lg:px-24 mb-16">
+          <div className="max-w-3xl mx-auto">
+            <Link
+              to="/thoughts"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              All thoughts
+            </Link>
+
+            <div className="flex items-center gap-3 mb-6">
+              <span className="text-sm font-medium px-3 py-1 bg-primary/10 text-primary rounded-full">
+                {thought.category}
+              </span>
+              <span className="text-sm text-muted-foreground">{thought.readTime}</span>
+              <span className="text-sm text-muted-foreground">•</span>
+              <span className="text-sm text-muted-foreground">{thought.date}</span>
+            </div>
+
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-medium leading-tight mb-6">
+              {thought.title}
+            </h1>
+
+            <p className="text-xl text-muted-foreground">
+              {thought.excerpt}
+            </p>
+          </div>
+        </header>
+
+        {/* Content */}
+        <article className="px-6 md:px-12 lg:px-24">
+          <div className="max-w-3xl mx-auto">
+            <div className="prose prose-lg">
+              {formatContent(thought.content)}
+            </div>
+          </div>
+        </article>
+
+        {/* Navigation */}
+        <nav className="px-6 md:px-12 lg:px-24 mt-24">
+          <div className="max-w-3xl mx-auto">
+            <div className="border-t border-border pt-12">
+              <div className="grid md:grid-cols-2 gap-8">
+                {prev && (
+                  <Link
+                    to={`/thoughts/${prev.slug}`}
+                    className="group"
+                  >
+                    <span className="text-sm text-muted-foreground mb-2 block">Previous</span>
+                    <div className="flex items-center gap-3">
+                      <ArrowLeft className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:-translate-x-1 transition-all" />
+                      <span className="font-display font-medium group-hover:text-primary transition-colors">
+                        {prev.title}
+                      </span>
+                    </div>
+                  </Link>
+                )}
+                {next && (
+                  <Link
+                    to={`/thoughts/${next.slug}`}
+                    className="group md:text-right md:ml-auto"
+                  >
+                    <span className="text-sm text-muted-foreground mb-2 block">Next</span>
+                    <div className="flex items-center gap-3 md:justify-end">
+                      <span className="font-display font-medium group-hover:text-primary transition-colors">
+                        {next.title}
+                      </span>
+                      <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                    </div>
+                  </Link>
+                )}
+              </div>
+            </div>
+          </div>
+        </nav>
+      </main>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default ThoughtDetail;
