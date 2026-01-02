@@ -114,14 +114,14 @@ export const projects: Project[] = [
   },
   {
     id: "5",
-    slug: "artisan-collective",
-    title: "Artisan Collective",
+    slug: "use-origin",
+    title: "Use Origin",
     description: "E-commerce marketplace connecting independent craftspeople with conscious consumers globally.",
     longDescription:
       "Artisan Collective is a curated marketplace celebrating handmade goods and the stories behind them. We partner directly with artisans, ensuring fair wages and sustainable practices.",
     category: "E-commerce",
     year: "2022",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80",
+    image: "/use-origin-logo.png",
     gallery: [
       "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&q=80",
       "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
