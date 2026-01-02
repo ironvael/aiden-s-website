@@ -58,6 +58,9 @@ const AboutPage = () => {
                   When I faced difficulties breaking into the civilian workforce, I decided to build my own path. I started learning everything I could about business, operations, and entrepreneurship. That journey led me to create Operations University and eventually Ironvael—a holding structure for ventures built on systems thinking and operational excellence.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
+                  I also assist nonprofits with digitalization and web development, helping mission-driven organizations build the systems they need to scale their impact.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
                   Today, all ventures under Ironvael are preparing to launch and scale. I'm focused on building durable systems that don't just survive contact with reality—they thrive in it.
                 </p>
               </div>
