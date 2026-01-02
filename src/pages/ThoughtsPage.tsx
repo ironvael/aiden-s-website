@@ -3,6 +3,50 @@ import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { thoughts } from "@/data/thoughts";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
+
+// Structured data for thoughts/blog collection
+const collectionStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Thoughts by Aiden Hovren",
+  "description": "Ideas, lessons, and stories from the entrepreneurial journey. Essays on operations, systems thinking, and building ventures.",
+  "url": "https://aidenhovren.com/thoughts",
+  "author": {
+    "@type": "Person",
+    "name": "Aiden Hovren",
+    "url": "https://aidenhovren.com"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": thoughts.length,
+    "itemListElement": thoughts.map((thought, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "url": `https://aidenhovren.com/thoughts/${thought.slug}`,
+      "name": thought.title
+    }))
+  }
+};
+
+const breadcrumbData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://aidenhovren.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Thoughts",
+      "item": "https://aidenhovren.com/thoughts"
+    }
+  ]
+};
 
 const ThoughtsPage = () => {
   const featuredThoughts = thoughts.filter((t) => t.featured);
@@ -10,6 +54,12 @@ const ThoughtsPage = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title="Thoughts - Essays on Entrepreneurship & Operations"
+        description="Ideas, lessons, and stories from Aiden Hovren's entrepreneurial journey. Essays on operations, systems thinking, and building ventures that last."
+        url="/thoughts"
+        structuredData={[collectionStructuredData, breadcrumbData]}
+      />
       <Navigation />
       
       <main className="pt-32 pb-24 px-6 md:px-12 lg:px-24">
