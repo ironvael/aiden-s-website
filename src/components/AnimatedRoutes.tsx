@@ -5,7 +5,6 @@ import ProjectsPage from "@/pages/ProjectsPage";
 import ProjectDetail from "@/pages/ProjectDetail";
 import ThoughtsPage from "@/pages/ThoughtsPage";
 import ThoughtDetail from "@/pages/ThoughtDetail";
-import DemoPage from "@/pages/DemoPage";
 import NotFound from "@/pages/NotFound";
 import PageTransition from "./PageTransition";
 
@@ -52,14 +51,6 @@ const AnimatedRoutes = () => {
           element={
             <PageTransition>
               <ThoughtDetail />
-            </PageTransition>
-          }
-        />
-        <Route
-          path="/demo"
-          element={
-            <PageTransition>
-              <DemoPage />
             </PageTransition>
           }
         />
