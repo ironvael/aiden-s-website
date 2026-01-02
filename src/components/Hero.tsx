@@ -1,19 +1,4 @@
-import { useState, useEffect } from "react";
-
 const Hero = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 2;
-      const y = (e.clientY / window.innerHeight - 0.5) * 2;
-      setMousePosition({ x, y });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
   return (
     <section className="min-h-screen flex items-center px-6 md:px-12 lg:px-24 pt-24">
       <div className="w-full flex flex-col lg:flex-row lg:items-center lg:justify-between gap-12">
@@ -41,24 +26,14 @@ const Hero = () => {
           </p>
         </div>
 
-        {/* Right decorative element with parallax */}
+        {/* Right decorative element */}
         <div 
           className="hidden lg:flex items-center justify-center opacity-0 animate-fade-in"
           style={{ animationDelay: "0.4s" }}
         >
-          <div 
-            className="relative w-72 h-72 xl:w-96 xl:h-96 transition-transform duration-300 ease-out"
-            style={{
-              transform: `translate(${mousePosition.x * 20}px, ${mousePosition.y * 20}px)`,
-            }}
-          >
+          <div className="relative w-72 h-72 xl:w-96 xl:h-96">
             {/* Slow rotating outer group */}
-            <div 
-              className="absolute inset-0 animate-[spin_60s_linear_infinite] transition-transform duration-500 ease-out"
-              style={{
-                transform: `translate(${mousePosition.x * -10}px, ${mousePosition.y * -10}px)`,
-              }}
-            >
+            <div className="absolute inset-0 animate-[spin_60s_linear_infinite]">
               <div className="absolute inset-0 rounded-full border border-border/40" />
               {/* Orbital dots */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-foreground/40" />
@@ -66,24 +41,14 @@ const Hero = () => {
             </div>
             
             {/* Counter-rotating middle ring */}
-            <div 
-              className="absolute inset-6 animate-[spin_45s_linear_infinite_reverse] transition-transform duration-400 ease-out"
-              style={{
-                transform: `translate(${mousePosition.x * 5}px, ${mousePosition.y * 5}px)`,
-              }}
-            >
+            <div className="absolute inset-6 animate-[spin_45s_linear_infinite_reverse]">
               <div className="absolute inset-0 rounded-full border border-border/30" />
               <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-foreground/35" />
               <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-1 h-1 rounded-full bg-foreground/25" />
             </div>
             
             {/* Slow rotating inner ring */}
-            <div 
-              className="absolute inset-12 animate-[spin_30s_linear_infinite] transition-transform duration-300 ease-out"
-              style={{
-                transform: `translate(${mousePosition.x * -5}px, ${mousePosition.y * -5}px)`,
-              }}
-            >
+            <div className="absolute inset-12 animate-[spin_30s_linear_infinite]">
               <div className="absolute inset-0 rounded-full border border-border/25" />
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-1 rounded-full bg-foreground/30" />
             </div>
