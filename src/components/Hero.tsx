@@ -32,19 +32,44 @@ const Hero = () => {
           style={{ animationDelay: "0.4s" }}
         >
           <div className="relative w-72 h-72 xl:w-96 xl:h-96">
-            {/* Outer ring */}
-            <div className="absolute inset-0 rounded-full border border-border/40" />
-            {/* Middle ring */}
-            <div className="absolute inset-8 rounded-full border border-border/30" />
-            {/* Inner ring */}
-            <div className="absolute inset-16 rounded-full border border-border/20" />
-            {/* Center dot */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-2 h-2 rounded-full bg-foreground/60" />
+            {/* Slow rotating outer group */}
+            <div className="absolute inset-0 animate-[spin_60s_linear_infinite]">
+              <div className="absolute inset-0 rounded-full border border-border/40" />
+              {/* Orbital dots */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-foreground/40" />
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-1.5 h-1.5 rounded-full bg-foreground/30" />
             </div>
-            {/* Accent line */}
-            <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
-            <div className="absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-border/50 to-transparent" />
+            
+            {/* Counter-rotating middle ring */}
+            <div className="absolute inset-6 animate-[spin_45s_linear_infinite_reverse]">
+              <div className="absolute inset-0 rounded-full border border-border/30" />
+              <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-foreground/35" />
+              <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-1 h-1 rounded-full bg-foreground/25" />
+            </div>
+            
+            {/* Slow rotating inner ring */}
+            <div className="absolute inset-12 animate-[spin_30s_linear_infinite]">
+              <div className="absolute inset-0 rounded-full border border-border/25" />
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-1 rounded-full bg-foreground/30" />
+            </div>
+            
+            {/* Innermost static ring */}
+            <div className="absolute inset-20 xl:inset-24 rounded-full border border-border/20" />
+            
+            {/* Center dot with glow */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-3 h-3 rounded-full bg-foreground/70 shadow-[0_0_20px_rgba(0,0,0,0.1)]" />
+            </div>
+            
+            {/* Static crosshairs */}
+            <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-border/40 to-transparent" />
+            <div className="absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-border/40 to-transparent" />
+            
+            {/* Diagonal accents */}
+            <div className="absolute inset-0 rotate-45">
+              <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-border/20 to-transparent" />
+              <div className="absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-border/20 to-transparent" />
+            </div>
           </div>
         </div>
       </div>
