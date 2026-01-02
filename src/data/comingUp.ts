@@ -5,6 +5,7 @@ export interface ComingUpItem {
   description?: string;
   date?: string; // For events with specific dates
   status?: "in-progress" | "upcoming" | "completed";
+  progress?: number; // 0-100 for goals
 }
 
 export const comingUpItems: ComingUpItem[] = [
@@ -22,6 +23,7 @@ export const comingUpItems: ComingUpItem[] = [
     title: "Building Ironvael Portfolio",
     description: "Expanding the holding company with new acquisitions",
     status: "in-progress",
+    progress: 40,
   },
   {
     id: "3",
@@ -29,5 +31,6 @@ export const comingUpItems: ComingUpItem[] = [
     title: "10 Essays Published",
     description: "Writing and publishing thoughts on operations and systems",
     status: "in-progress",
+    progress: 30,
   },
 ];
