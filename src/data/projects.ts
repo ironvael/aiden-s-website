@@ -26,7 +26,7 @@ export const projects: Project[] = [
       "Ironvael is a systems-driven holding company that builds, operates, and invests in resilient businesses. We focus on disciplined execution, long-term value creation, and infrastructure that compounds over time. Our work prioritizes strength, clarity, and results over noise.",
     category: "Investment Company",
     year: "2025",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
+    image: "/ironvael.png",
     gallery: [
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
       "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80",
@@ -51,7 +51,7 @@ export const projects: Project[] = [
       "Self Rescue Co. is an apparel brand inspired by preparedness, resilience, and personal responsibility. Our designs draw from rescue culture, hard lessons, and real-world experience—made for people who value capability over comfort. Self Rescue isn’t about fear; it’s about readiness and owning the outcome.",
     category: "E-commerce",
     year: "2024",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
+    image: "/SRC.jpg",
     gallery: [
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80",
       "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?w=800&q=80",
