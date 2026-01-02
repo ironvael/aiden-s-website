@@ -10,5 +10,12 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+# Robots.txt for aidenhovren.com
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://aidenhovren.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
