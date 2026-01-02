@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
+import ComingUp from "@/components/ComingUp";
 import Projects from "@/components/Projects";
 import Thoughts from "@/components/Thoughts";
 import Footer from "@/components/Footer";
@@ -72,6 +73,7 @@ const Index = () => {
       <Navigation />
       <main>
         <Hero />
+        <ComingUp />
         <Projects />
         <Thoughts />
       </main>
