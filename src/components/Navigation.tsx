@@ -1,32 +1,54 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Work", href: "#projects" },
-  { label: "Thoughts", href: "#thoughts" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/#about" },
+  { label: "Work", href: "/projects" },
+  { label: "Thoughts", href: "/#thoughts" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  const handleNavClick = (href: string) => {
+    setIsOpen(false);
+    
+    // If it's a hash link and we're on the home page, scroll smoothly
+    if (href.startsWith("/#") && location.pathname === "/") {
+      const element = document.querySelector(href.replace("/", ""));
+      element?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 lg:px-24 py-6 bg-background/80 backdrop-blur-sm">
       <nav className="flex items-center justify-between">
-        <a href="#" className="font-display text-lg font-medium">
+        <Link to="/" className="font-display text-lg font-medium">
           Aiden Hovren
-        </a>
+        </Link>
 
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link.label}>
-              <a 
-                href={link.href} 
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {link.label}
-              </a>
+              {link.href.startsWith("/projects") ? (
+                <Link 
+                  to={link.href}
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a 
+                  href={link.href} 
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  onClick={() => handleNavClick(link.href)}
+                >
+                  {link.label}
+                </a>
+              )}
             </li>
           ))}
         </ul>
@@ -45,13 +67,23 @@ const Navigation = () => {
           <ul className="space-y-6">
             {navLinks.map((link) => (
               <li key={link.label}>
-                <a 
-                  href={link.href} 
-                  className="text-lg font-display"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </a>
+                {link.href.startsWith("/projects") ? (
+                  <Link 
+                    to={link.href}
+                    className="text-lg font-display"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a 
+                    href={link.href} 
+                    className="text-lg font-display"
+                    onClick={() => handleNavClick(link.href)}
+                  >
+                    {link.label}
+                  </a>
+                )}
               </li>
             ))}
           </ul>
