@@ -8,50 +8,56 @@ const ProjectCard = ({ project }: { project: Project }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <Link 
+    <Link
       to={`/projects/${project.slug}`}
-      className={`group relative block ${
-        project.featured ? "md:col-span-2 md:row-span-2" : ""
-      }`}
+      className={`group relative block ${project.featured ? "md:col-span-2 md:row-span-2" : ""}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className={`relative overflow-hidden bg-secondary ${
-        project.featured ? "aspect-[4/3] md:aspect-[16/10]" : "aspect-[4/3]"
-      }`}>
+      <div
+        className={`relative overflow-hidden bg-secondary ${
+          project.featured ? "aspect-[4/3] md:aspect-[16/10]" : "aspect-[4/3]"
+        }`}
+      >
         {/* Image */}
-        <img 
-          src={project.image} 
+        <img
+          src={project.image}
           alt={project.title}
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
-        
+
         {/* Overlay */}
-        <div className={`absolute inset-0 bg-foreground/0 transition-all duration-500 ${
-          isHovered ? "bg-foreground/60" : ""
-        }`} />
-        
+        <div
+          className={`absolute inset-0 bg-foreground/0 transition-all duration-500 ${
+            isHovered ? "bg-foreground/60" : ""
+          }`}
+        />
+
         {/* Content overlay */}
-        <div className={`absolute inset-0 p-6 md:p-8 flex flex-col justify-end transition-opacity duration-500 ${
-          isHovered ? "opacity-100" : "opacity-0"
-        }`}>
+        <div
+          className={`absolute inset-0 p-6 md:p-8 flex flex-col justify-end transition-opacity duration-500 ${
+            isHovered ? "opacity-100" : "opacity-0"
+          }`}
+        >
           <p className="text-background/70 text-sm mb-2">
             {project.category} · {project.year}
           </p>
-          <h3 className={`font-display font-medium text-background mb-2 ${
-            project.featured ? "text-2xl md:text-4xl" : "text-xl md:text-2xl"
-          }`}>
+          <h3
+            className={`font-display font-medium text-background mb-2 ${
+              project.featured ? "text-2xl md:text-4xl" : "text-xl md:text-2xl"
+            }`}
+          >
             {project.title}
           </h3>
-          <p className="text-background/80 text-sm md:text-base max-w-md">
-            {project.description}
-          </p>
+          <p className="text-background/80 text-sm md:text-base max-w-md">{project.description}</p>
         </div>
 
         {/* Arrow */}
-        <div className={`absolute top-6 right-6 w-10 h-10 rounded-full bg-background flex items-center justify-center transition-all duration-500 ${
-          isHovered ? "opacity-100 translate-x-0 translate-y-0" : "opacity-0 translate-x-2 -translate-y-2"
-        }`}>
+        <div
+          className={`absolute top-6 right-6 w-10 h-10 rounded-full bg-background flex items-center justify-center transition-all duration-500 ${
+            isHovered ? "opacity-100 translate-x-0 translate-y-0" : "opacity-0 translate-x-2 -translate-y-2"
+          }`}
+        >
           <ArrowUpRight className="w-5 h-5 text-foreground" />
         </div>
       </div>
@@ -71,24 +77,24 @@ const ProjectsPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       <main className="pt-32 pb-24 px-6 md:px-12 lg:px-24">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="mb-16 md:mb-24">
-            <p 
+            <p
               className="text-muted-foreground text-sm tracking-wide uppercase mb-4 opacity-0 animate-fade-in"
               style={{ animationDelay: "0.1s" }}
             >
               Selected Work
             </p>
-            <h1 
+            <h1
               className="text-4xl md:text-6xl lg:text-7xl font-display font-medium leading-[1.1] mb-6 opacity-0 animate-fade-in"
               style={{ animationDelay: "0.2s" }}
             >
               Projects
             </h1>
-            <p 
+            <p
               className="text-lg md:text-xl text-muted-foreground max-w-2xl opacity-0 animate-fade-in"
               style={{ animationDelay: "0.3s" }}
             >
@@ -97,7 +103,7 @@ const ProjectsPage = () => {
           </div>
 
           {/* Projects Grid */}
-          <div 
+          <div
             className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 opacity-0 animate-fade-in"
             style={{ animationDelay: "0.4s" }}
           >
@@ -107,14 +113,12 @@ const ProjectsPage = () => {
           </div>
 
           {/* Bottom CTA */}
-          <div 
+          <div
             className="mt-24 pt-16 border-t border-border text-center opacity-0 animate-fade-in"
             style={{ animationDelay: "0.5s" }}
           >
-            <p className="text-muted-foreground mb-4">
-              Interested in working together?
-            </p>
-            <a 
+            <p className="text-muted-foreground mb-4">Interested in working together?</p>
+            <a
               href="mailto:hello@aidenhovren.com"
               className="inline-flex items-center gap-2 text-lg font-display font-medium link-hover"
             >
