@@ -1,20 +1,8 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
+import { projects } from "@/data/projects";
 
-const projects = [
-  {
-    title: "Venture One",
-    description: "A creative studio focused on digital experiences.",
-    year: "2024",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80",
-  },
-  {
-    title: "The Creator's Toolkit",
-    description: "Resources and tools for the modern entrepreneur.",
-    year: "2023",
-    image: "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=800&q=80",
-  },
-];
+const featuredProjects = projects.slice(0, 2);
 
 const Projects = () => {
   return (
@@ -33,10 +21,11 @@ const Projects = () => {
 
         {/* Preview cards */}
         <div className="grid md:grid-cols-2 gap-6 mb-12">
-          {projects.map((project) => (
-            <article 
-              key={project.title}
-              className="group cursor-pointer"
+          {featuredProjects.map((project) => (
+            <Link 
+              key={project.id}
+              to={`/projects/${project.slug}`}
+              className="group block"
             >
               <div className="relative overflow-hidden bg-secondary aspect-[4/3] mb-4">
                 <img 
@@ -53,7 +42,7 @@ const Projects = () => {
                 <h3 className="font-display font-medium">{project.title}</h3>
                 <span className="text-sm text-muted-foreground">{project.year}</span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
 

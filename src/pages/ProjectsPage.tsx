@@ -1,61 +1,16 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import { projects, Project } from "@/data/projects";
 
-const projects = [
-  {
-    id: 1,
-    title: "Venture One",
-    description: "A creative studio focused on crafting bold digital experiences that challenge the status quo.",
-    category: "Startup",
-    year: "2024",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "The Creator's Toolkit",
-    description: "Resources and tools designed for entrepreneurs who refuse to settle for ordinary.",
-    category: "Product",
-    year: "2023",
-    image: "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=800&q=80",
-    featured: true,
-  },
-  {
-    id: 3,
-    title: "Community Hub",
-    description: "A platform connecting ambitious creators across the globe.",
-    category: "Platform",
-    year: "2023",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
-    featured: false,
-  },
-  {
-    id: 4,
-    title: "Side Project X",
-    description: "Experimental ideas that evolved into something unexpected.",
-    category: "Experiment",
-    year: "2022",
-    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80",
-    featured: false,
-  },
-  {
-    id: 5,
-    title: "Brand Studio",
-    description: "Visual identity work for startups ready to make their mark.",
-    category: "Agency",
-    year: "2022",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80",
-    featured: false,
-  },
-];
-
-const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: number }) => {
+const ProjectCard = ({ project }: { project: Project }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <article 
-      className={`group relative cursor-pointer ${
+    <Link 
+      to={`/projects/${project.slug}`}
+      className={`group relative block ${
         project.featured ? "md:col-span-2 md:row-span-2" : ""
       }`}
       onMouseEnter={() => setIsHovered(true)}
@@ -108,7 +63,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
           <span className="text-sm text-muted-foreground">{project.year}</span>
         </div>
       </div>
-    </article>
+    </Link>
   );
 };
 
@@ -146,8 +101,8 @@ const ProjectsPage = () => {
             className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 opacity-0 animate-fade-in"
             style={{ animationDelay: "0.4s" }}
           >
-            {projects.map((project, index) => (
-              <ProjectCard key={project.id} project={project} index={index} />
+            {projects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
             ))}
           </div>
 
