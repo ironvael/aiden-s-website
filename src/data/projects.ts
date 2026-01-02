@@ -51,7 +51,7 @@ export const projects: Project[] = [
       "Self Rescue Co. is an apparel brand inspired by preparedness, resilience, and personal responsibility. Our designs draw from rescue culture, hard lessons, and real-world experience—made for people who value capability over comfort. Self Rescue isn’t about fear; it’s about readiness and owning the outcome.",
     category: "E-commerce",
     year: "2024",
-    image: "/856937-O-DRG18-359.jpg",
+    image: "/SRC.jpg",
     gallery: [
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80",
       "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?w=800&q=80",
@@ -76,7 +76,7 @@ export const projects: Project[] = [
       "Kaploosh Energy is a culture-first energy brand blending clean energy, bold flavors, and high-impact visuals. Built for creators, gamers, and late-night builders, it’s designed to fuel focus and momentum without the corporate feel. Kaploosh turns energy into identity, not just stimulation.",
     category: "Consumer Goods",
     year: "2023",
-    image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1200&q=80",
+    image: "/kaploosh-energy.png",
     gallery: [
       "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80",
       "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80",
