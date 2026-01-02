@@ -135,12 +135,21 @@ const AboutPage = () => {
                 <p className="text-xl md:text-2xl leading-relaxed mb-6">
                   Interested in working together or just want to say hello?
                 </p>
-                <a 
-                  href="mailto:hello@aidenhovren.com" 
-                  className="inline-block text-foreground underline underline-offset-4 hover:text-muted-foreground transition-colors"
-                >
-                  hello@aidenhovren.com
-                </a>
+                <div className="flex flex-wrap gap-6">
+                  <a 
+                    href="mailto:hello@aidenhovren.com" 
+                    className="text-foreground underline underline-offset-4 hover:text-muted-foreground transition-colors"
+                  >
+                    hello@aidenhovren.com
+                  </a>
+                  <a 
+                    href="/resume.pdf" 
+                    download
+                    className="text-foreground underline underline-offset-4 hover:text-muted-foreground transition-colors"
+                  >
+                    Download Resume
+                  </a>
+                </div>
               </div>
             </div>
           </div>
