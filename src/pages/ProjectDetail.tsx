@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowUpRight, ArrowRight, Expand } from "lucide-react";
 import { getProjectBySlug, getAdjacentProjects } from "@/data/projects";
 import Navigation from "@/components/Navigation";
 import Lightbox from "@/components/Lightbox";
+import SEO from "@/components/SEO";
 
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -48,8 +49,63 @@ const ProjectDetail = () => {
     );
   }
 
+  // Generate structured data for the project
+  const projectStructuredData = {
+    "@context": "https://schema.org",
+    "@type": project.category === "SaaS" ? "SoftwareApplication" : 
+             project.category === "EdTech" ? "EducationalOrganization" : "Organization",
+    "name": project.title,
+    "description": project.longDescription,
+    "url": `https://aidenhovren.com/projects/${project.slug}`,
+    ...(project.link && { "sameAs": project.link }),
+    "foundingDate": project.year,
+    "founder": {
+      "@type": "Person",
+      "name": "Aiden Hovren",
+      "url": "https://aidenhovren.com"
+    },
+    "image": project.image.startsWith("http") ? project.image : `https://aidenhovren.com${project.image}`,
+    ...(project.category === "SaaS" && {
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web"
+    })
+  };
+
+  // Breadcrumb structured data
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://aidenhovren.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Projects",
+        "item": "https://aidenhovren.com/projects"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": project.title,
+        "item": `https://aidenhovren.com/projects/${project.slug}`
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={`${project.title} - ${project.category}`}
+        description={project.description}
+        url={`/projects/${project.slug}`}
+        image={project.image.startsWith("http") ? project.image : `https://aidenhovren.com${project.image}`}
+        structuredData={[projectStructuredData, breadcrumbData]}
+      />
       <Navigation />
 
       {/* Hero */}
