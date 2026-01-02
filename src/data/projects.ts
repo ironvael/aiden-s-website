@@ -112,31 +112,6 @@ export const projects: Project[] = [
     result:
       "Helped 200+ companies reduce emissions by an average of 23%. Processing $2B+ in supply chain data monthly. Certified B-Corp partner.",
   },
-  {
-    /*
-    id: "5",
-    slug: "artisan-collective",
-    title: "Artisan Collective",
-    description: "E-commerce marketplace connecting independent craftspeople with conscious consumers globally.",
-    longDescription:
-      "Artisan Collective is a curated marketplace celebrating handmade goods and the stories behind them. We partner directly with artisans, ensuring fair wages and sustainable practices.",
-    category: "E-commerce",
-    year: "2022",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&q=80",
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
-    ],
-    featured: false,
-    link: "https://artisancollective.shop",
-    challenge:
-      "Independent artisans struggle to reach global audiences while maintaining fair pricing. Mass-market platforms prioritize volume over craftsmanship.",
-    solution:
-      "Built a marketplace with storytelling at its core. Each product page features the artisan's story, production process, and impact metrics. Implemented fair-trade pricing models.",
-    result:
-      "8,000+ artisans from 45 countries. $15M in sales with 70% going directly to creators. Average order value 3x higher than comparable platforms.",
-  */
-  },
 ];
 
 export const getProjectBySlug = (slug: string): Project | undefined => {
