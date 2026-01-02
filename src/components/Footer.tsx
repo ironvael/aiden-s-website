@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { Mail, FileDown } from "lucide-react";
 import { forwardRef } from "react";
 
 const Footer = forwardRef<HTMLElement>((props, ref) => {
@@ -13,13 +13,23 @@ const Footer = forwardRef<HTMLElement>((props, ref) => {
             <p className="text-xl md:text-2xl leading-relaxed mb-8">
               Have an idea or want to collaborate? I'd love to hear from you.
             </p>
-            <a 
-              href="mailto:hello@aidenhovren.com" 
-              className="inline-flex items-center gap-3 text-lg font-display font-medium link-hover"
-            >
-              <Mail className="w-5 h-5" />
-              hello@aidenhovren.com
-            </a>
+            <div className="flex flex-wrap gap-6">
+              <a 
+                href="mailto:hello@aidenhovren.com" 
+                className="inline-flex items-center gap-3 text-lg font-display font-medium link-hover"
+              >
+                <Mail className="w-5 h-5" />
+                hello@aidenhovren.com
+              </a>
+              <a 
+                href="/resume.pdf" 
+                download
+                className="inline-flex items-center gap-3 text-lg font-display font-medium link-hover"
+              >
+                <FileDown className="w-5 h-5" />
+                Download Resume
+              </a>
+            </div>
           </div>
         </div>
 
