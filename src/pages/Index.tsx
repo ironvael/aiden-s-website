@@ -38,11 +38,6 @@ const webPageStructuredData = {
       "https://instagram.com/aidenhovren"
     ]
   },
-  "speakable": {
-    "@type": "SpeakableSpecification",
-    "cssSelector": ["h1", ".hero-description"]
-  },
-  "specialty": "Entrepreneurship, Operations, Systems Thinking",
   "keywords": "Aiden Hovren, entrepreneur, operations expert, Lean Six Sigma, Ironvael, Operations University, Navy Rescue Swimmer, business ventures, operational excellence, systems thinking"
 };
 
