@@ -1,13 +1,39 @@
+import { useState, useCallback } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { ArrowLeft, ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, ArrowRight, Expand } from "lucide-react";
 import { getProjectBySlug, getAdjacentProjects } from "@/data/projects";
 import Navigation from "@/components/Navigation";
+import Lightbox from "@/components/Lightbox";
 
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const project = getProjectBySlug(slug || "");
   const { prev, next } = getAdjacentProjects(slug || "");
+
+  // Lightbox state
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  // Combine hero image with gallery images for full lightbox
+  const allImages = project ? [project.image, ...(project.gallery || [])] : [];
+
+  const openLightbox = useCallback((index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  }, []);
+
+  const closeLightbox = useCallback(() => {
+    setLightboxOpen(false);
+  }, []);
+
+  const goToPrev = useCallback(() => {
+    setLightboxIndex((prev) => (prev === 0 ? allImages.length - 1 : prev - 1));
+  }, [allImages.length]);
+
+  const goToNext = useCallback(() => {
+    setLightboxIndex((prev) => (prev === allImages.length - 1 ? 0 : prev + 1));
+  }, [allImages.length]);
 
   if (!project) {
     return (
@@ -68,13 +94,20 @@ const ProjectDetail = () => {
       {/* Hero Image */}
       <section className="px-6 md:px-12 lg:px-24 mb-24">
         <div className="max-w-7xl mx-auto">
-          <div className="aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-secondary">
+          <button
+            onClick={() => openLightbox(0)}
+            className="group relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-secondary cursor-zoom-in"
+          >
             <img 
               src={project.image} 
               alt={project.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
-          </div>
+            <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-300" />
+            <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 scale-90 group-hover:scale-100">
+              <Expand className="w-5 h-5 text-foreground" />
+            </div>
+          </button>
         </div>
       </section>
 
@@ -137,23 +170,39 @@ const ProjectDetail = () => {
           <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-2 gap-6">
               {project.gallery.map((image, index) => (
-                <div 
-                  key={index} 
-                  className={`overflow-hidden bg-secondary ${
+                <button
+                  key={index}
+                  onClick={() => openLightbox(index + 1)} // +1 because hero image is at index 0
+                  className={`group relative overflow-hidden bg-secondary cursor-zoom-in ${
                     index === 0 && project.gallery!.length % 2 !== 0 ? "md:col-span-2" : ""
                   }`}
                 >
                   <img 
                     src={image} 
                     alt={`${project.title} gallery ${index + 1}`}
-                    className="w-full h-full object-cover aspect-[4/3]"
+                    className="w-full h-full object-cover aspect-[4/3] transition-transform duration-500 group-hover:scale-105"
                   />
-                </div>
+                  <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-300" />
+                  <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 scale-90 group-hover:scale-100">
+                    <Expand className="w-5 h-5 text-foreground" />
+                  </div>
+                </button>
               ))}
             </div>
           </div>
         </section>
       )}
+
+      {/* Lightbox */}
+      <Lightbox
+        images={allImages}
+        currentIndex={lightboxIndex}
+        isOpen={lightboxOpen}
+        onClose={closeLightbox}
+        onPrev={goToPrev}
+        onNext={goToNext}
+        alt={project.title}
+      />
 
       {/* Project Navigation */}
       <section className="px-6 md:px-12 lg:px-24 py-16 border-t border-border">
