@@ -68,8 +68,8 @@ export const projects: Project[] = [
   },
   {
     id: "3",
-    slug: "kaploosh",
-    title: "Kaploosh",
+    slug: "kaploosh-energy",
+    title: "Kaploosh Energy",
     description:
       "Kaploosh Energy is a lifestyle-driven energy drink brand built around bold flavor, clean energy, and expressive design. It’s made for creators, night-owls, and people who move fast.",
     longDescription:
