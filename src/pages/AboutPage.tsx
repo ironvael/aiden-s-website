@@ -11,13 +11,72 @@ const socials = [
 ];
 
 const skills = [
-  { category: "Operations", items: ["Process Optimization", "Systems Design", "Lean Six Sigma", "Aviation Operations"] },
-  { category: "Building", items: ["Product Strategy", "Curriculum Development", "Content Creation", "Business Development"] },
-  { category: "Tools", items: ["Notion", "Figma", "Analytics", "AI Tools"] },
+  {
+    category: "Operations",
+    items: [
+      "Process Optimization",
+      "Systems Design",
+      "Lean Six Sigma",
+      "Risk & Decision-Making"
+    ]
+  },
+  {
+    category: "Building",
+    items: [
+      "Product Strategy",
+      "Curriculum Development",
+      "Business Development",
+      "Content Creation"
+    ]
+  },
+  {
+    category: "Technology",
+    items: [
+      "Frontend Web Development",
+      "UI/UX Systems Thinking",
+      "AI-Assisted Development",
+      "Analytics & Instrumentation"
+    ]
+  },
+  {
+    category: "Leadership",
+    items: [
+      "Crisis Response",
+      "Training & Instruction",
+      "Team Operations",
+      "Operational Discipline"
+    ]
+  },
+  {
+    category: "Brand & Marketing",
+    items: [
+      "Brand Positioning",
+      "Messaging & Copywriting",
+      "Audience Building",
+      "Go-To-Market Basics"
+    ]
+  },
+  {
+    category: "Tooling",
+    items: [
+      "Notion",
+      "Figma",
+      "GitHub",
+      "Automation Platforms"
+    ]
+  }
 ];
 
 const interests = [
-  "Philosophy", "Systems Theory", "Design", "Writing", "Technology", "Psychology"
+  "Systems Theory",
+  "Philosophy",
+  "Human Performance Under Stress",
+  "Design",
+  "Psychology",
+  "Technology",
+  "Writing",
+  "Education & Skill-Building",
+  "Long-Term Thinking"
 ];
 
 const timeline = [
