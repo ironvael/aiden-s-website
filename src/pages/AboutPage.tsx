@@ -68,15 +68,15 @@ const skills = [
 ];
 
 const interests = [
-  "Systems Theory",
-  "Philosophy",
-  "Human Performance Under Stress",
+  "Systems",
+  "Operations",
   "Design",
-  "Psychology",
+  "Education",
   "Technology",
+  "Automation",
   "Writing",
-  "Education & Skill-Building",
-  "Long-Term Thinking"
+  "Strategy",
+  "Longevity"
 ];
 
 const timeline = [
