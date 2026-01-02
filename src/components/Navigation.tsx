@@ -6,7 +6,6 @@ import { ThemeToggle } from "./ThemeToggle";
 const navLinks = [
   { label: "About", href: "/#about" },
   { label: "Work", href: "/projects" },
-  { label: "Demo", href: "/demo" },
   { label: "Thoughts", href: "/thoughts" },
   { label: "Contact", href: "/#contact" },
 ];
@@ -36,7 +35,7 @@ const Navigation = () => {
           <ul className="flex items-center gap-8">
             {navLinks.map((link) => (
               <li key={link.label}>
-                {link.href.startsWith("/projects") || link.href.startsWith("/thoughts") || link.href.startsWith("/demo") ? (
+                {link.href.startsWith("/projects") || link.href.startsWith("/thoughts") ? (
                   <Link 
                     to={link.href}
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -75,7 +74,7 @@ const Navigation = () => {
           <ul className="space-y-6">
             {navLinks.map((link) => (
               <li key={link.label}>
-                {link.href.startsWith("/projects") || link.href.startsWith("/thoughts") || link.href.startsWith("/demo") ? (
+                {link.href.startsWith("/projects") || link.href.startsWith("/thoughts") ? (
                   <Link 
                     to={link.href}
                     className="text-lg font-display"
