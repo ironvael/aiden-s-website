@@ -1,73 +1,96 @@
-# Welcome to your Lovable project
+# AidenHovren.com
 
-## Project info
+Personal website and digital hub for **Aiden Hovren** — a systems-oriented operator building companies, tools, and infrastructure across technology, operations, and education.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+This site is not a résumé replacement or a marketing funnel.  
+It’s a living system: part portfolio, part sandbox, part public notebook.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## Purpose
 
-**Use Lovable**
+AidenHovren.com exists to:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- Demonstrate real, hands-on web development and systems thinking  
+- Centralize projects, ventures, and long-term work  
+- Build credibility through execution, not credentials  
+- Serve as a foundation for future products, writing, and experiments  
 
-Changes made via Lovable will be committed automatically to this repo.
+No personal brand theater. No buzzword soup. Just work, shipped.
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## What You’ll Find Here
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Projects & Ventures**  
+  Active companies, experiments, and ideas in progress
 
-Follow these steps:
+- **Writing & Thinking**  
+  Long-term thinking, systems design, and lessons learned building things
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **Technical Demos**  
+  Interactive UI elements, animations, and front-end experiments
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- **Background**  
+  A concise overview of experience across operations, engineering, and leadership
 
-# Step 3: Install the necessary dependencies.
-npm i
+This site is intentionally opinionated and evolving.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+## Tech Stack
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+This site is built with modern, scalable tooling:
 
-**Use GitHub Codespaces**
+- **Framework:** React / Next.js (App Router)
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Deployment:** Vercel
+- **Design Philosophy:** Clean, functional, minimal — form follows intent
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The stack may evolve. The goal is clarity and performance, not trend-chasing.
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## Design Principles
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- Systems over aesthetics  
+- Motion with purpose  
+- Minimal but not sterile  
+- Fast, readable, and resilient  
+- Interactive where it adds signal  
 
-## How can I deploy this project?
+Every element should earn its place.
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+## Status
 
-Yes, you can!
+This is an **active, evolving project**.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Expect:
+- Ongoing visual refinements  
+- New sections and experiments  
+- Occasional breaking changes  
+- Incomplete ideas living publicly  
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Stability is less important than momentum.
+
+---
+
+## License
+
+Content is © Aiden Hovren.  
+Code is open for reference and learning unless otherwise noted.
+
+If something here sparks an idea—build it. That’s the point.
+
+---
+
+## Contact
+
+Website: https://aidenhovren.com  
+GitHub: https://github.com/AidenHovren  
+
+No contact forms. No funnels.  
+If you know how to reach me, you know how to reach me.
