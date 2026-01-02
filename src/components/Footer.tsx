@@ -27,14 +27,14 @@ const Footer = () => {
             © 2025 Aiden Hovren
           </p>
           <nav className="flex gap-8">
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Twitter
+            <a href="https://x.com/theaidenhovren" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              X
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <a href="https://linkedin.com/in/aidenhovren" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               LinkedIn
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Instagram
+            <a href="https://github.com/ironvael" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              GitHub
             </a>
           </nav>
         </div>
