@@ -80,7 +80,7 @@ export const projects: Project[] = [
     gallery: [
       "/kaploosh-energy-wall.png",
       "/kaploosh-energy-can.png",
-      "/kaploosh-energy.png
+      "/kaploosh-energy.png",
     ],
     featured: false,
     link: "https://kaploosh.com",
