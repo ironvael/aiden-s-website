@@ -28,9 +28,6 @@ export const projects: Project[] = [
     year: "2025",
     image: "/ironvael.png",
     gallery: [
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80",
-      "https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=800&q=80",
     ],
     featured: true,
     link: "https://ironvael.com",
