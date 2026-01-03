@@ -51,14 +51,14 @@ export const projects: Project[] = [
       "Self Rescue Co. is an apparel brand inspired by preparedness, resilience, and personal responsibility. Our designs draw from rescue culture, hard lessons, and real-world experience—made for people who value capability over comfort. Self Rescue isn’t about fear; it’s about readiness and owning the outcome.",
     category: "E-commerce",
     year: "2025",
-    image: "/856937-O-DRG18-359.jpg",
+    image: "/SRC-website.png",
     gallery: [
       "/SAR.png",
       "/USN.png",
       "/MTsar.png",
     ],
     featured: true,
-    link: "https://selfrescue.shop",
+    link: "https://selfrescueco.com",
     challenge:
       "Preparedness and self-reliance are often reduced to fear-based marketing or performative “tacticool” aesthetics. The message gets lost, and the mindset gets diluted.",
     solution:
@@ -76,7 +76,7 @@ export const projects: Project[] = [
       "Kaploosh Energy is a culture-first energy brand blending clean energy, bold flavors, and high-impact visuals. Built for creators, gamers, and late-night builders, it’s designed to fuel focus and momentum without the corporate feel. Kaploosh turns energy into identity, not just stimulation.",
     category: "Consumer Goods",
     year: "2025",
-    image: "/kaploosh-energy.png",
+    image: "/kaploosh.png",
     gallery: [
       "/kaploosh-energy-wall.png",
       "/kaploosh-energy-can.png",
