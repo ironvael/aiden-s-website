@@ -53,9 +53,9 @@ export const projects: Project[] = [
     year: "2025",
     image: "/856937-O-DRG18-359.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80",
-      "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?w=800&q=80",
-      "https://images.unsplash.com/photo-1497215842964-222b430dc094?w=800&q=80",
+      "/SAR.png",
+      "/USN.png",
+      "/MTsar.png",
     ],
     featured: true,
     link: "https://selfrescue.shop",
