@@ -22,12 +22,12 @@ const Footer = forwardRef<HTMLElement>((props, ref) => {
                 hello@aidenhovren.com
               </a>
               <a 
-                href="/resume.pdf" 
+                href="https://cv.aidenhovren.com" 
                 download
                 className="inline-flex items-center gap-3 text-lg font-display font-medium link-hover"
               >
                 <FileDown className="w-5 h-5" />
-                Download Resume
+                View my Resume
               </a>
             </div>
           </div>
