@@ -78,8 +78,9 @@ export const projects: Project[] = [
     year: "2025",
     image: "/kaploosh-energy.png",
     gallery: [
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80",
-      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80",
+      "/kaploosh-energy-wall.png",
+      "/kaploosh-energy-can.png",
+      "/kaploosh-energy.png
     ],
     featured: false,
     link: "https://kaploosh.com",
