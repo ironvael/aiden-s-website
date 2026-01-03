@@ -102,8 +102,6 @@ export const projects: Project[] = [
     year: "2025",
     image: "/use-origin-logo.png",
     gallery: [
-      "https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=800&q=80",
-      "https://images.unsplash.com/photo-1569163139599-0f4517e36f31?w=800&q=80",
     ],
     featured: false,
     challenge:
@@ -124,8 +122,6 @@ export const projects: Project[] = [
     year: "2025",
     image: "/OU-logo.png",
     gallery: [
-      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&q=80",
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
     ],
     featured: false,
     link: "https://artisancollective.shop",
