@@ -1,80 +1,181 @@
-const Hero = () => {
-  return (
-    <section className="min-h-screen flex items-center px-6 md:px-12 lg:px-24 pt-24">
-      <div className="w-full flex flex-col lg:flex-row lg:items-center lg:justify-between gap-12">
-        {/* Left content */}
-        <div className="max-w-3xl lg:max-w-xl xl:max-w-2xl">
-          <p 
-            className="text-muted-foreground text-sm tracking-wide uppercase mb-6 opacity-0 animate-fade-in"
-            style={{ animationDelay: "0.1s" }}
-          >
-            Entrepreneur & Creator
-          </p>
-          
-          <h1 
-            className="text-4xl md:text-6xl lg:text-7xl font-display font-medium leading-[1.1] mb-8 opacity-0 animate-fade-in"
-            style={{ animationDelay: "0.2s" }}
-          >
-            Aiden Hovren
-          </h1>
-          
-          <p 
-            className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed opacity-0 animate-fade-in"
-            style={{ animationDelay: "0.3s" }}
-          >
-            Building things that matter. I create ventures, tell stories, and explore ideas at the intersection of creativity and business.
-          </p>
-        </div>
+import { motion, useReducedMotion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
-        {/* Right decorative element */}
-        <div 
-          className="hidden lg:flex items-center justify-center opacity-0 animate-fade-in"
-          style={{ animationDelay: "0.4s" }}
-        >
-          <div className="relative w-72 h-72 xl:w-96 xl:h-96">
-            {/* Slow rotating outer group */}
-            <div className="absolute inset-0 animate-[spin_60s_linear_infinite]">
-              <div className="absolute inset-0 rounded-full border border-border/40" />
-              {/* Orbital dots */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-foreground/40" />
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-1.5 h-1.5 rounded-full bg-foreground/30" />
-            </div>
-            
-            {/* Counter-rotating middle ring */}
-            <div className="absolute inset-6 animate-[spin_45s_linear_infinite_reverse]">
-              <div className="absolute inset-0 rounded-full border border-border/30" />
-              <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-foreground/35" />
-              <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-1 h-1 rounded-full bg-foreground/25" />
-            </div>
-            
-            {/* Slow rotating inner ring */}
-            <div className="absolute inset-12 animate-[spin_30s_linear_infinite]">
-              <div className="absolute inset-0 rounded-full border border-border/25" />
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-1 rounded-full bg-foreground/30" />
-            </div>
-            
-            {/* Innermost static ring */}
-            <div className="absolute inset-20 xl:inset-24 rounded-full border border-border/20" />
-            
-            {/* Center dot with glow */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-3 h-3 rounded-full bg-foreground/70 shadow-[0_0_20px_rgba(0,0,0,0.1)]" />
-            </div>
-            
-            {/* Static crosshairs */}
-            <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-border/40 to-transparent" />
-            <div className="absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-border/40 to-transparent" />
-            
-            {/* Diagonal accents */}
-            <div className="absolute inset-0 rotate-45">
-              <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-border/20 to-transparent" />
-              <div className="absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-border/20 to-transparent" />
-            </div>
+export default function Hero() {
+  const reduce = useReducedMotion();
+
+  return (
+    <section className="relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-background" />
+
+        {/* soft gradients */}
+        <motion.div
+          className="absolute -top-24 -left-24 h-96 w-96 rounded-full blur-3xl opacity-30"
+          style={{
+            background:
+              "radial-gradient(circle at 30% 30%, rgba(124,92,255,1), transparent 55%)",
+          }}
+          animate={reduce ? undefined : { x: [0, 18, 0], y: [0, -14, 0], scale: [1, 1.06, 1] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        <motion.div
+          className="absolute -bottom-28 -right-28 h-[28rem] w-[28rem] rounded-full blur-3xl opacity-25"
+          style={{
+            background:
+              "radial-gradient(circle at 40% 40%, rgba(0,210,255,1), transparent 58%)",
+          }}
+          animate={reduce ? undefined : { x: [0, -16, 0], y: [0, 12, 0], scale: [1, 1.05, 1] }}
+          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        {/* subtle grid */}
+        <div
+          className="absolute inset-0 opacity-[0.08]"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, rgba(0,0,0,1) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,1) 1px, transparent 1px)",
+            backgroundSize: "72px 72px",
+            maskImage:
+              "radial-gradient(closest-side at 50% 40%, rgba(0,0,0,0.95), transparent 85%)",
+          }}
+        />
+      </div>
+
+      {/* Content */}
+      <div className="mx-auto max-w-6xl px-4 py-20 sm:py-24">
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          <div>
+            <motion.div
+              className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-sm text-muted-foreground bg-background/60 backdrop-blur"
+              initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.6 }}
+            >
+              ⚡ Systems thinking, in public
+            </motion.div>
+
+            <motion.h1
+              className="mt-5 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
+              initial={{ opacity: 0, y: 16, filter: "blur(10px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.75, delay: 0.05 }}
+            >
+              Building{" "}
+              <span className="bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent">
+                resilient ventures
+              </span>{" "}
+              with disciplined ops.
+            </motion.h1>
+
+            <motion.p
+              className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+            >
+              Former Navy Rescue Swimmer turned entrepreneur. Lean Six Sigma mindset.
+              Building Ironvael + Operations University.
+            </motion.p>
+
+            <motion.div
+              className="mt-7 flex flex-wrap gap-3"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.25 }}
+            >
+              <Button asChild>
+                <a href="#projects">See projects</a>
+              </Button>
+
+              <Button variant="outline" asChild>
+                <a href="#thoughts">Read thoughts</a>
+              </Button>
+            </motion.div>
+
+            <motion.div
+              className="mt-8 flex flex-wrap gap-3 text-sm text-muted-foreground"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.35 }}
+            >
+              <span className="rounded-lg border px-3 py-2 bg-background/50 backdrop-blur">
+                A11y: respects reduced motion
+              </span>
+              <span className="rounded-lg border px-3 py-2 bg-background/50 backdrop-blur">
+                Clean + fast + responsive
+              </span>
+              <span className="rounded-lg border px-3 py-2 bg-background/50 backdrop-blur">
+                Vite + React + shadcn
+              </span>
+            </motion.div>
           </div>
+
+          {/* Right “preview card” */}
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, x: 18, y: 10 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.15 }}
+          >
+            <motion.div
+              className="rounded-2xl border bg-background/60 p-5 shadow-xl backdrop-blur"
+              animate={
+                reduce
+                  ? undefined
+                  : { y: [0, -10, 0], rotate: [0, 1.2, 0] }
+              }
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <div className="flex items-center justify-between">
+                <div className="flex gap-2">
+                  <span className="h-2.5 w-2.5 rounded-full bg-muted" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-muted" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-muted" />
+                </div>
+                <span className="text-xs text-muted-foreground rounded-full border px-2 py-1">
+                  Live preview
+                </span>
+              </div>
+
+              <div className="mt-4">
+                <div className="text-sm font-semibold">Motion ≠ noise</div>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Subtle animations guide attention. Overdone ones summon rage.
+                </p>
+
+                <div className="mt-4">
+                  <div className="text-xs text-muted-foreground">Delight</div>
+                  <div className="mt-2 h-2 overflow-hidden rounded-full bg-muted/40">
+                    <motion.div
+                      className="h-full bg-gradient-to-r from-violet-500 to-cyan-400"
+                      initial={{ width: "0%" }}
+                      animate={{ width: "78%" }}
+                      transition={{ duration: 1.1, delay: 0.45 }}
+                    />
+                  </div>
+                </div>
+
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {["Framer Motion", "Responsive", "Theme-aware", "Fast"].map((t, i) => (
+                    <motion.span
+                      key={t}
+                      className="rounded-full border px-2 py-1 text-xs text-muted-foreground"
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.55 + i * 0.08 }}
+                    >
+                      {t}
+                    </motion.span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
   );
-};
-
-export default Hero;
+}
